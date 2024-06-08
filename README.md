@@ -1,3 +1,5 @@
+![Architecture](https://github.com/Aakaaaassh/NSE_Equity_Index_Scraper_Piepline/assets/66636545/cdebb706-6133-41f4-9f70-4195232d4cd0)
+
 # NSE Equity Index Scraper Pipeline
 
 **NSE Equity Index Scraper Pipeline** is a robust, Dockerized web scraping tool designed to collect and process data from various equity indices websites. It automates the extraction of market index information, making it easily accessible and ready for analysis. This project leverages Python, BeautifulSoup, and Docker to ensure a consistent and portable execution environment. Ideal for financial analysts, data scientists, and developers looking to streamline their data collection processes.
