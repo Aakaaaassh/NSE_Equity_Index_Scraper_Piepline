@@ -1,0 +1,48 @@
+```sh
+docker build -t scraper .
+```
+
+### Breakdown:
+
+1. **`docker build`**:
+   - This command tells Docker to build an image from a Dockerfile.
+
+2. **`-t scraper`**:
+   - The `-t` flag allows you to name and optionally tag the image.
+   - `my-script-image` is the name of the resulting Docker image.
+
+3. **`.`**:
+   - The period (`.`) at the end specifies the build context.
+   - The build context is the directory containing the Dockerfile and any other files needed for the build.
+   - In this case, it refers to the current directory.
+
+### Explanation:
+
+The command builds a Docker image from the Dockerfile in the current directory and tags the resulting image as `my-script-image`. This makes it easier to reference and run the image later.
+
+### Example:
+
+If you have a Dockerfile in your current directory, running this command will create an image named `my-script-image` that you can use to create and run containers.
+
+
+
+```sh
+docker run -v $(pwd)/downloads:/app/downloaded_files EquityIndexScraper
+```
+
+### Breakdown:
+
+1. **`docker run`**:
+   - This command starts a new container from a specified Docker image.
+
+2. **`-v $(pwd)/downloads:/app/downloaded_files`**:
+   - **`-v`**: The volume flag that mounts a directory from the host to the container.
+   - **`$(pwd)/downloads`**: The host path to the directory being mounted. `$(pwd)` is a shell command that returns the current working directory, and `/downloaded_files` is the subdirectory.
+   - **`/app/downloaded_files`**: The path inside the container where the host directory will be mounted.
+
+3. **`my-script-image`**:
+   - The name of the Docker image to use for creating the container.
+
+### Explanation:
+
+This command runs a Docker container from the image `my-script-image`. It mounts the local `downloaded_files` directory from your current working directory to the `/app/downloaded_files` directory inside the container. This allows the container to read from and write to the specified local directory, ensuring that any files created or modified by the container are stored locally on your machine.
